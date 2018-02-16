@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/DemoTheatre">
+     configuration datasource pour une base PostgresSQL locale
+        <Resource name="jdbc/test" 
+              auth="Container" 
+              type="javax.sql.DataSource"
+              maxActive="10" 
+              maxIdle="3" 
+              maxWait="10000"
+              username="postgres" 
+              password="postgres" 
+              driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://localhost:5433/theatreTest"/>
+              
+  <!--   datasource pour la base Oracle de l'UFRIM2AG
+  <Resource auth="Container" 
+            driverClassName="oracle.jdbc.OracleDriver"
+            maxActive="10"
+            maxIdle="3" 
+            maxWait="10000" 
+            name="jdbc/test" 
+            password="XXXXXX" 
+            type="javax.sql.DataSource" 
+            url="jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:im2ag" 
+            username="XXXXXX"/>
+  -->
+</Context>
