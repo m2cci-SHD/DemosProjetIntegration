@@ -4,7 +4,7 @@ Ce projet contient différentes applications web qui vous montrent différentes 
 
 ## [DemoTheatre](DemoTheatre/README.md)
 
-Cette application montre l'utilisation du plugin jQuery-Seat-Charts (https://github.com/mateuszmarkowski/jQuery-Seat-Charts) pour gérer la sélection et l'achat de place de théatre en cliquant sur une carte de la salle.
+Cette application montre l'utilisation du plugin jQuery-Seat-Charts (https://github.com/mateuszmarkowski/jQuery-Seat-Charts) pour gérer la sélection et l'achat de places de théatre en cliquant sur une carte de la salle.
 
 ## DemoEnvoiMail
 
