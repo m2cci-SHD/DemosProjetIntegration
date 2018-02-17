@@ -3,7 +3,7 @@ Application de démonstration de jQuery-Seat-Charts
 
 Cette application montre l'utilisation du plugin jQuery-Seat-Charts (https://github.com/mateuszmarkowski/jQuery-Seat-Charts) pour gérer la sélection et l'achat de places de théatre en cliquant sur une carte de la salle.
 
-## la base de données
+## La base de données
 
 Pour pouvoir tester l'application, il vous faut créer une base de données réprésentant (de manière extrêmement simplifiée) un théatre,
 les spectacles qu'il accueille et les places vendues pour ceux-ci.
@@ -16,7 +16,7 @@ Les tables sont :
 
 ![datamodel](doc/images/datamodel.png)
 
-### créer les tables
+### Créer les tables
 
 Pour vous aider à créer cette base sur la BD Oracle vous disposez d'un script de creation des tables `createTables.sql` situé dans le répertoire 
 `src/sql`.
@@ -26,7 +26,7 @@ projet pour que les tables créées n'interfèrent pas avec les tables de votre 
 1. ouvrir le fichier `createTables.sql` et choisir la connexion ouverte à l'étape précédente
 1. exécuter ce fichier.
 
-### définir les places
+### Définir les places
 Il faut ensuite remplir la table des places. Pour cela il existe un programme d'initalisation (`PlacesInitialiser` situé dans le package  `im2ag.m2pcci.theatre.util` défini dans les Test Packages) qui utilise une carte de la salle définie 
 dans un fichier texte (`carte.txt`) situé dans le répertoire `test\data`. Pour exécuter ce programme :
 
@@ -36,7 +36,7 @@ dans un fichier texte (`carte.txt`) situé dans le répertoire `test\data`. Pour
 
 Ensuite créez une ou plusieurs entrées dans la table `LESSPECTACLES`
 
-## l'application web
+## L'application web
 
 Vous pouvez maintenant lancer l'application web `DemoTheatre`, mais auparavant pensez bien à modifier le fichier de
 configuration `context.xml` pour y indiquer votre login et mot de passe de connexion BD.
