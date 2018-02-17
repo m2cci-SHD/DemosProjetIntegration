@@ -41,7 +41,7 @@ Ensuite créez une ou plusieurs entrées dans la table `LESSPECTACLES`
 Vous pouvez maintenant lancer l'application web `DemoTheatre`, mais auparavant pensez bien à modifier le fichier de
 configuration `context.xml` pour y indiquer votre login et mot de passe de connexion BD.
 
-**Attention:** il se peut que lorsque vous faites un Clean-Build sur l'application la commande échoue. Dans ce cas là placez dans l'onglet services et arrêtez le serveur tomcat. La commmande Clean-Build devrait alors fonctionner.
+**Attention:** il se peut que lorsque vous faites un `Clean-Build` sur l'application la commande échoue. Dans ce cas là placez-vous dans l'onglet services et arrêtez le serveur tomcat. La commmande  `Clean-Build` devrait alors fonctionner.
 
 
 
