@@ -11,10 +11,8 @@ les spectacles qu'il accueille et les places vendues pour ceux-ci.
 Les tables sont :
 
 - LESSPECTACLES
-
-- LESPLACES
-
-- LESPLACES_VENDUES
+- PLACES
+- PLACES_VENDUES
 
 Pour vous aider à créer cette base sur la BD Oracle vous disposez d'un script de creation des tables `createTables.sql` situé dans le répertoire 
 `src/sql`.
