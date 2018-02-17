@@ -14,15 +14,19 @@ Les tables sont :
 - PLACES
 - PLACES_VENDUES
 
+![datamodel](doc/images/datamodel.png)
+
+### créer les tables
+
 Pour vous aider à créer cette base sur la BD Oracle vous disposez d'un script de creation des tables `createTables.sql` situé dans le répertoire 
 `src/sql`.
 
 1. dans l'onglet service de netbeans ouvrir une connexion à la base Oracle (**attention**, évitez d'utiliser la base de votre groupe
 projet pour que les tables créées n'interfèrent pas avec les tables de votre projet).
-1. ouvrir le fichier `createTables.sql` et choisir la connexion ouverte à l'étape précédente?
+1. ouvrir le fichier `createTables.sql` et choisir la connexion ouverte à l'étape précédente
 1. exécuter ce fichier.
 
-
+### définir les places
 Il faut ensuite remplir la table des places. Pour cela il existe un programme d'initalisation (`PlacesInitialiser` situé dans le package  `im2ag.m2pcci.theatre.util` défini dans les Test Packages) qui utilise une carte de la salle définie 
 dans un fichier texte (`carte.txt`) situé dans le répertoire `test\data`. Pour exécuter ce programme :
 
@@ -31,6 +35,8 @@ dans un fichier texte (`carte.txt`) situé dans le répertoire `test\data`. Pour
 1. Verifier que les 620 places définies dans la carte sont bien dans la table `PLACES_VENDUES`
 
 Ensuite créez une ou plusieurs entrées dans la table `LESSPECTACLES`
+
+## l'application web
 
 Vous pouvez maintenant lancer l'application web `DemoTheatre`, mais auparavant pensez bien à modifier le fichier de
 configuration `context.xml` pour y indiquer votre login et mot de passe de connexion BD.
