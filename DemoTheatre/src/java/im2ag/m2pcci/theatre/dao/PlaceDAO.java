@@ -124,11 +124,13 @@ public class PlaceDAO {
                 conn.commit();   // valide la transaction
             } catch (SQLException ex) {
                 conn.rollback();   // annule la transaction 
+                System.out.println("Transaction annulée");
                 System.out.println(ex.getNextException().getMessage());
                 ex.getNextException().printStackTrace();
                 if (ex instanceof SQLIntegrityConstraintViolationException) {
                     System.out.println("contrainte intégrité violée");
                 }
+                System.out.flush();
                 throw ex;
             } finally {
                 conn.setAutoCommit(true); // remet la connexion en mode autocommit
