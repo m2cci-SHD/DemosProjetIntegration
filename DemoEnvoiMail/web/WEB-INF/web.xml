@@ -35,14 +35,14 @@
                 nom utilisateur mail 
             -->
             <param-name>mail_user_name</param-name>
-            <param-value>TO DO votre login</param-value>
+            <param-value>**Votre login**</param-value>
         </init-param>
         <init-param>
             <!--    
                 mot de passe utilisateur mail  
             -->
             <param-name>mail_user_passwd</param-name>
-            <param-value>TO DO votre mot de passe</param-value>
+            <param-value>**Votre mot de passe**</param-value>
         </init-param>
         <init-param>
             <!--    
