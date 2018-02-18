@@ -19,7 +19,7 @@ Les tables sont :
 ### Créer les tables
 
 Pour vous aider à créer cette base sur la BD Oracle vous disposez d'un script de creation des tables `createTables.sql` situé dans le répertoire 
-`src/sql`.
+`sql` (Pour le voir mettez vous sur l'onglet `Fichiers` du projet Netbeans).
 
 1. dans l'onglet service de netbeans ouvrir une connexion à la base Oracle (**attention**, évitez d'utiliser la base de votre groupe
 projet pour que les tables créées n'interfèrent pas avec les tables de votre projet).
