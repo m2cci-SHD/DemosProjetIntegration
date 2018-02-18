@@ -118,15 +118,9 @@ Pour envoyer un email depuis les machines de l'UFR I2MAG vous allez utiliser le 
 * nom utilisateur : **votre login agalan**
 * mot de passe : **votre mot de passe agalan**  **--ATTENTION** de ne pas le déposer sur Github !!
 
-**ATTENTION:** 
+**ATTENTION:** Cette configuration ne marche que pour les machines en salles de TP de l'UFR IM2AG, lorsque vous êtes sur un autre réseau (par exemple depuis votre ordinateur personnel) il faut vous connecter sur le VPN-UGA. 
 
-* Cette configuration ne marche que pour les machines en salles de TP de l'UFR IM2AG, lorsque vous êtes sur un autre réseau (par
-exemple depuis votre ordinateur personnel) il faut vous connecter sur le VPN-UGA. 
-
-
-
-
-Lorsque vous n'êtes pas sur les machines de l'UFR-IM2AG, pour envoyer des mails depuis votre ordinateur vous pouvez utiliser le serveur de mail `smtps.univ-grenoble-alpes.fr`(qui remplace le pramètre `smtp: 152.77.82.189`) ou le serveur mail de votre messagerie personnelle. Ainsi si vous avez un compte gmail, les paramètres de configuration seront les suivants:
+Lorsque vous n'êtes pas sur les machines de l'UFR-IM2AG, pour envoyer des mails depuis votre ordinateur vous pouvez utiliser le serveur de mail `smtps.univ-grenoble-alpes.fr`(en vous connectant sur le VPN UGA) ou le serveur mail de votre messagerie personnelle. Ainsi si vous avez un compte gmail, les paramètres de configuration seront les suivants:
 
 * serveur smtp: **smtp.gmail.fr**
 * port du serveur: **587**
@@ -155,6 +149,6 @@ javax.mail.AuthenticationFailedException: 534-5.7.14 <https://accounts.google.co
 	at javax.mail.Transport.send(Transport.java:124)
 ```
 
-Pour résoudre ce problème vous pouvez désactiver ce mécanisme de sécurité, en vous connectant à https://www.google.com/settings/security/lesssecureapps (Pour en savoir plus à ce sujet: [Autoriser les applications moins sécurisées à accéder à votre compte gmail] (https://support.google.com/accounts/answer/6010255?hl=fr). 
+Pour résoudre ce problème vous pouvez désactiver ce mécanisme de sécurité, en vous connectant à https://www.google.com/settings/security/lesssecureapps (Pour en savoir plus à ce sujet: [Autoriser les applications moins sécurisées à accéder à votre compte gmail](https://support.google.com/accounts/answer/6010255?hl=fr). 
 
 
