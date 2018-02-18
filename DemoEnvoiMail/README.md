@@ -120,7 +120,7 @@ Pour envoyer un email depuis les machines de l'UFR I2MAG vous allez utiliser le 
 
 **ATTENTION:** Cette configuration ne marche que pour les machines en salles de TP de l'UFR IM2AG, lorsque vous êtes sur un autre réseau (par exemple depuis votre ordinateur personnel) il faut vous connecter sur le VPN-UGA. 
 
-Lorsque vous n'êtes pas sur les machines de l'UFR-IM2AG, pour envoyer des mails depuis votre ordinateur vous pouvez utiliser le serveur de mail `smtps.univ-grenoble-alpes.fr`(en vous connectant sur le VPN UGA) ou le serveur mail de votre messagerie personnelle. Ainsi si vous avez un compte gmail, les paramètres de configuration seront les suivants:
+Lorsque vous n'êtes pas sur les machines de l'UFR-IM2AG, pour envoyer des mails depuis votre ordinateur personnel vous pouvez utiliser le serveur de mail `smtps.univ-grenoble-alpes.fr`(en vous connectant sur le VPN UGA) ou le serveur mail de votre messagerie personnelle. Ainsi si vous avez un compte gmail, les paramètres de configuration seront les suivants:
 
 * serveur smtp: **smtp.gmail.fr**
 * port du serveur: **587**
