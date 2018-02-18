@@ -127,7 +127,7 @@ Lorsque vous n'êtes pas sur les machines de l'UFR-IM2AG, pour envoyer des mails
 * nom utilisateur : **votre identifiant gmail**   (adresse mail gmail)
 * mot de passe : **votre mot de passe gmail**  **--ATTENTION** de ne pas le déposer sur Github !!
 
-Cependant, par défaut, google bloque l'accès au serveur smtp pour des application tierces telles notre programme java (il utilise une [validation en deux étapes](https://www.google.fr/intl/fr/landing/2step/#tab=how-it-works). Ainsi si vous essayez d'envoyer un mail, vous aurez l'exception suivante:
+Cependant, par défaut, google bloque l'accès au serveur smtp pour des application tierces telles notre programme java (il utilise une [validation en deux étapes](https://www.google.fr/intl/fr/landing/2step/#tab=how-it-works)). Ainsi si vous essayez d'envoyer un mail, vous aurez l'exception suivante:
 
 ```
 javax.mail.AuthenticationFailedException: 534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbt3
@@ -149,6 +149,6 @@ javax.mail.AuthenticationFailedException: 534-5.7.14 <https://accounts.google.co
 	at javax.mail.Transport.send(Transport.java:124)
 ```
 
-Pour résoudre ce problème vous pouvez désactiver ce mécanisme de sécurité, en vous connectant à https://www.google.com/settings/security/lesssecureapps (Pour en savoir plus à ce sujet: [Autoriser les applications moins sécurisées à accéder à votre compte gmail](https://support.google.com/accounts/answer/6010255?hl=fr). 
+Pour résoudre ce problème vous pouvez désactiver ce mécanisme de sécurité, en vous connectant à https://www.google.com/settings/security/lesssecureapps (Pour en savoir plus à ce sujet reportez vous à la note technique: [Autoriser les applications moins sécurisées à accéder à votre compte gmail](https://support.google.com/accounts/answer/6010255?hl=fr)). 
 
 
