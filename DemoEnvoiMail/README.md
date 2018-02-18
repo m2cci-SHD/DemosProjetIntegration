@@ -1,4 +1,4 @@
-# DemosEnvoiMail
+# DemoEnvoiMail
 
 Ce projet NetBeans contient une application web de démonstration de génération d'un fichier pdf et envoi de celui-ci par email.
 
