@@ -56,7 +56,7 @@ la configuration STMP est définie dans le fichier de déploiment `web.xml` sous
                 port serveur smtp  
             -->
             <param-name>smtp_port</param-name>
-            <param-value>A_Completer</param-value>
+            <param-value>*A_Completer*</param-value>
         </init-param>
         <init-param>
             <!--    
@@ -70,7 +70,7 @@ la configuration STMP est définie dans le fichier de déploiment `web.xml` sous
                 mot de passe utilisateur mail  
             -->
             <param-name>mail_user_passwd</param-name>
-            <param-value>A_Completer</param-value>
+            <param-value>*A_Completer*</param-value>
         </init-param>
         <init-param>
             <!--    
@@ -96,22 +96,8 @@ la configuration STMP est définie dans le fichier de déploiment `web.xml` sous
     </servlet-mapping>
         ...
  ```
-Pour envoyer un email depuis les machine de l'UFR I2MAG vous allez utiliser le serveur smtp de l'UGA. Mais le serveur SMTP
- (`smtps.univ-grenoble-alpes.fr`) n'est pas directement accessible depuis les machines du réseau enseignement de l'UFR-IM2AG. 
-Sur celles-ci vous allez passer par une machine tierce qui elle dispose des autorisations nécessaires et redirigera vos envois de mail sur
-le serveur `smtps.univ-grenoble-alpes.fr`.
-
-Les paramètres de configuration sont donc:
-
-* serveur smtp: **152.77.82.189**     -- redirige vers smtps.univ-grenoble-alpes.fr
-* port du serveur: **587**
-* nom utilisateur : **votre login agalan**
-* mot de passe : **votre mot de passe agalan**  **--ATTENTION** de ne pas le déposer sur Github !!
-
-##**ATTENTION:** 
-
-* Cette configuration ne marche que pour les machines en salles de TP de l'UFR IM2AG, mais pas lorsque vous êtes sur wifi-campus où bien sur le VPN-UGA. 
-* Par ailleurs, lorsque le fichier `web.xml` contient, comme ici , un élément `servlet-mapping`, celui-ci prend le dessus sur une annotation `@WebServlet(name = "nomServlet", urlPatterns = {"/uneURL"})` qui serait définie dans le code de la classe Java de la Servlet. Pour éviter tout problème, ne mettez pas d'annotation `@WebServlet` dans votre servlet, et mettez bien le même nom pour les  éléments `<servlet>` et `<servlet-mapping>`
+ 
+* **Attention** Lorsque le fichier `web.xml` contient, comme ici , un élément `servlet-mapping`, celui-ci prend le dessus sur une annotation `@WebServlet(name = "nomServlet", urlPatterns = {"/uneURL"})` qui serait définie dans le code de la classe Java de la Servlet. Pour éviter tout problème, ne mettez pas d'annotation `@WebServlet` dans votre servlet, et mettez bien le même nom pour les  éléments `<servlet>` et `<servlet-mapping>`
 
 ```xml
     <servlet>
@@ -124,6 +110,21 @@ Les paramètres de configuration sont donc:
         <url-pattern>/sendTicket</url-pattern>
     </servlet-mapping>
 ```
+
+Pour envoyer un email depuis les machines de l'UFR I2MAG vous allez utiliser le serveur smtp de l'UGA (`smtps.univ-grenoble-alpes.fr`). Les paramètres de configuration sont donc:
+
+* serveur smtp: **smtps.univ-grenoble-alpes.fr**
+* port du serveur: **587**
+* nom utilisateur : **votre login agalan**
+* mot de passe : **votre mot de passe agalan**  **--ATTENTION** de ne pas le déposer sur Github !!
+
+**ATTENTION:** 
+
+* Cette configuration ne marche que pour les machines en salles de TP de l'UFR IM2AG, lorsque vous êtes sur un autre réseau (par
+exemple depuis votre ordinateur personnel) il faut vous connecter sur le VPN-UGA. 
+
+
+
 
 Lorsque vous n'êtes pas sur les machines de l'UFR-IM2AG, pour envoyer des mails depuis votre ordinateur vous pouvez utiliser le serveur de mail `smtps.univ-grenoble-alpes.fr`(qui remplace le pramètre `smtp: 152.77.82.189`) ou le serveur mail de votre messagerie personnelle. Ainsi si vous avez un compte gmail, les paramètres de configuration seront les suivants:
 
