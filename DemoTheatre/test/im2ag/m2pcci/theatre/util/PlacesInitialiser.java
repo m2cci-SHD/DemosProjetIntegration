@@ -89,7 +89,7 @@ public class PlacesInitialiser {
 
     public static void main(String[] args) throws IOException {
         try {
-            DataSource ds = new TestDataSource();
+            DataSource ds = new DataSourceDeTest();
             initPlaces(ds, "test/data/carte.txt");
         } catch (SQLException ex) {
             ex.printStackTrace(System.err);

@@ -16,7 +16,7 @@
  */
 package im2ag.m2pcci.theatre.dao;
 
-import im2ag.m2pcci.theatre.util.TestDataSource;
+import im2ag.m2pcci.theatre.util.DataSourceDeTest;
 import java.sql.SQLException;
 import javax.sql.DataSource;
 import org.junit.After;
@@ -31,7 +31,7 @@ import org.junit.Test;
  */
 public class PlaceDAOTest {
     
-    static DataSource ds = new TestDataSource();
+    static DataSource ds = new DataSourceDeTest();
     
     public PlaceDAOTest() {
     }
