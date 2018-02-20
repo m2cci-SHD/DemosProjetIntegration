@@ -16,7 +16,7 @@
  */
 package im2ag.m2pcci.theatre.ctrler.service;
 
-import im2ag.m2pcci.theatre.dao.PlaceDAO;
+import im2ag.m2pcci.theatre.dao.PlacesDAO;
 import im2ag.m2pcci.theatre.model.Spectacle;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -55,7 +55,7 @@ public class ListePlacesService extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             Spectacle spectacle = (Spectacle) session.getAttribute("spectacle");
-            String json = PlaceDAO.placesVenduesAsJSON(ds, spectacle.getId());
+            String json = PlacesDAO.placesVenduesAsJSON(ds, spectacle.getId());
             response.setContentType("application/json; charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.print(json);

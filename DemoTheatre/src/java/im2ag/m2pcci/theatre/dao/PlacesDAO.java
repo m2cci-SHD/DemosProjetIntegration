@@ -32,7 +32,7 @@ import javax.sql.DataSource;
 /**
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
-public class PlaceDAO {
+public class PlacesDAO {
 
     /**
      * Requête pour trouver les places déjà vendues pour un spectacle donné
@@ -104,14 +104,15 @@ public class PlaceDAO {
     }
 
     /**
-     * achat de places. Permet d'enregistrer dans la base de données les places achetées.
+     * achat de places. Permet d'enregistrer dans la base de données les places
+     * achetées.
      *
      * @param ds la source de données pour les connexions JDBC
      * @param spectacleId l'identifiant du spectacle
      * @param placesIds les identifiants des places achetée
      * @throws SQLException SQLException si problème avec JDBC
      */
-    public static void acheterPlace(DataSource ds, int spectacleId, int[] placesIds) throws SQLException {
+    public static void acheterPlaces(DataSource ds, int spectacleId, int[] placesIds) throws SQLException, AchatConcurrentException {
         try (Connection conn = ds.getConnection()) {
             try (PreparedStatement pstmt = conn.prepareStatement(ACHETER_PLACE)) {
                 conn.setAutoCommit(false);  // début d'une transaction
@@ -124,14 +125,13 @@ public class PlaceDAO {
                 conn.commit();   // valide la transaction
             } catch (SQLException ex) {
                 conn.rollback();   // annule la transaction 
-                System.out.println("Transaction annulée");
-                System.out.println(ex.getNextException().getMessage());
-                ex.getNextException().printStackTrace();
-                if (ex instanceof SQLIntegrityConstraintViolationException) {
-                    System.out.println("contrainte intégrité violée");
+                ex = ex.getNextException();  // on prend la cause
+                if (ex instanceof SQLIntegrityConstraintViolationException
+                        || ex.getMessage().contains("pk_placesvendues")) {  // certains drivers ne supportent pas encore le type SQLIntegrityConstraintViolationException
+                    throw new AchatConcurrentException("places déjà achetées ", ex);
+                } else {
+                    throw ex;
                 }
-                System.out.flush();
-                throw ex;
             } finally {
                 conn.setAutoCommit(true); // remet la connexion en mode autocommit
             }

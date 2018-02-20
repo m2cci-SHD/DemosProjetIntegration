@@ -43,8 +43,8 @@ public class PlacesInitialiser {
     private static final String INSERT_PLACE_QUERY = "INSERT INTO places (idplace, categorie, rang, colonne) VALUES (?, ?, ?, ?)";
 
     /**
-     * intialise la table des places à partir du fichier texte donnant la
-     * carte de la salle de spectacle.
+     * intialise la table des places à partir du fichier texte donnant la carte
+     * de la salle de spectacle.
      *
      * @param ds la source de données pour les connexions jdbc
      * @param filePath le nom du fichier texte contenant la carte de la salle
@@ -75,6 +75,41 @@ public class PlacesInitialiser {
                         }
                     }
                     noRang++;
+                }
+                pstmt.executeBatch();
+                conn.commit();
+            } catch (SQLException ex) {
+                conn.rollback();
+                throw ex;
+            } finally {
+                conn.setAutoCommit(true);
+            }
+        }
+    }
+
+    private static String ACHAT_PLACES = "INSERT INTO places_vendues (idplace, idspectacle) VALUES (?, ?)";
+    private static String EFFACER_PLACESVENDUES = "DELETE FROM places_vendues WHERE idspectacle = ?";
+
+    /**
+     * initialise la table les places vendues 
+     * @param ds la dataSource
+     * @param noSpectacle le numéro du spectacle
+     * @param placesVendues les numéros de places vendues
+     * @throws SQLException si problème SQL
+     */
+    public static void initPlacesVendues(DataSource ds, int noSpectacle, int[] placesVendues) throws SQLException {
+        try (Connection conn = ds.getConnection()) {
+            // efface les places vendues pour le spectalce noSpectacle
+            PreparedStatement pstmt1 = conn.prepareStatement(EFFACER_PLACESVENDUES);
+            pstmt1.setInt(1, noSpectacle);
+            pstmt1.executeUpdate();
+            // insère les places vendues 
+            try (PreparedStatement pstmt = conn.prepareStatement(ACHAT_PLACES)) {
+                pstmt.setInt(2, noSpectacle);
+                conn.setAutoCommit(false);
+                for (int noPlace : placesVendues) {
+                    pstmt.setInt(1, noPlace);
+                    pstmt.addBatch();
                 }
                 pstmt.executeBatch();
                 conn.commit();

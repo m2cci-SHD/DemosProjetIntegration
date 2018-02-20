@@ -16,7 +16,8 @@
  */
 package im2ag.m2pcci.theatre.ctrler;
 
-import im2ag.m2pcci.theatre.dao.PlaceDAO;
+import im2ag.m2pcci.theatre.dao.AchatConcurrentException;
+import im2ag.m2pcci.theatre.dao.PlacesDAO;
 import im2ag.m2pcci.theatre.model.Spectacle;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -63,12 +64,14 @@ public class AcheterPlacesCtrler extends HttpServlet {
             HttpSession session = request.getSession();
             Spectacle spectacle = (Spectacle) session.getAttribute("spectacle");
             // demande à la DAO d'enregistrer les places dans la BD
-            PlaceDAO.acheterPlace(ds, spectacle.getId(), placesIds);
+            PlacesDAO.acheterPlaces(ds, spectacle.getId(), placesIds);
 
             // redirection vers la page confirmant l'achat.
             request.getRequestDispatcher("/WEB-INF/achat.jsp").forward(request, response);
         } catch (SQLException ex) {
             throw new ServletException(ex.getMessage(), ex);
+        } catch (AchatConcurrentException ex) {
+             request.getRequestDispatcher("/WEB-INF/erreurachat.jsp").forward(request, response);
         }
     }
 
