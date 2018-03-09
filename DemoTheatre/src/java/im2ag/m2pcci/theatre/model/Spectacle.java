@@ -14,27 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package im2ag.m2pcci.theatre.model;
 
 /**
- * Représente un spectacle.
+ * Représente un spectacle. 
+ * 
+ * TODO : rajouter la possibilité de prendre en compte d'éventuelles informations
+ * supplémentaires pour un spectacle, par exmple résumé, artistes ....
+ *
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
 public class Spectacle {
-    
+
     /**
      * identifiant du spectacle
      */
     private final int id;
-    
+
     /**
      * le titre du spectacle
      */
     private final String titre;
 
     /**
-     * 
+     *
      * @param id identifiant du spectacle dans la BD
      * @param titre le titre du spectacle
      */
@@ -50,5 +53,5 @@ public class Spectacle {
     public String getTitre() {
         return titre;
     }
-    
+
 }

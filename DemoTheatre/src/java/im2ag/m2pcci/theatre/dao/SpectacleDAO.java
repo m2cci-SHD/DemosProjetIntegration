@@ -27,6 +27,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 /**
+ * DAO proposant différentes méthodes concernant les spectacles proposés.
  *
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
@@ -35,6 +36,16 @@ public class SpectacleDAO {
     private static final String SPECT_QUERY = "SELECT * FROM lesspectacles WHERE idspectacle = ?";
     private static final String ALL_SPECT_QUERY = "SELECT * FROM lesspectacles";
 
+    /**
+     * Retourne les informations détaillées concernant un spectale donné
+     * TODO : rajouter la prise en compte d'informations supplémentaires pour 
+     * un spectacle, par exmple résumé, artistes ....
+     *
+     * @param ds la datasource pour les connexions à la BD
+     * @param idSpectacle l'idnetifiant du spectale
+     * @return l'objet Spectacle contenant les informations du spectacle
+     * @throws SQLException si un problème avec la BD.
+     */
     public static Spectacle getSpectacle(DataSource ds, int idSpectacle) throws SQLException {
         try (Connection conn = ds.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(SPECT_QUERY)) {
@@ -48,6 +59,14 @@ public class SpectacleDAO {
         }
     }
 
+    /**
+     * Retourne une liste de tous les spectacles présent dans la base, avec pour chaque
+     * spectacle une information minimale (identifiant, titre).
+     * 
+     * @param ds la datasource pour les connexions à la BD
+     * @return La liste des Spectacles avec uniquement leur titre et numéro
+     * @throws SQLException si un problème avec la BD.
+     */
     public static List<Spectacle> getAllSpectacle(DataSource ds) throws SQLException {
         try (Connection conn = ds.getConnection();
                 Statement stmt = conn.createStatement()) {

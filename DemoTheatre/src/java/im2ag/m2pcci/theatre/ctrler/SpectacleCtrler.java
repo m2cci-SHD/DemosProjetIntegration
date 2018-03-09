@@ -30,9 +30,9 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 /**
- * L'utilisateur a choisi un spectacle. récupère dans la BD les infos associées
- * à ce spectacle, et redirige vers la page permettant à l'utilisateur de choisir
- * ses places.
+ * L'utilisateur a choisi un spectacle. Cette servlet récupère dans la BD les infos 
+ * détaillées associées  à ce spectacle, et redirige l'utilisateur vers la page 
+ * qui permettra de choisir interactivment ses places.
  * 
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */

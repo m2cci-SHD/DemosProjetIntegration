@@ -33,6 +33,7 @@ import javax.sql.DataSource;
 /**
  * Enregistre dans la BD les places sélectionnées par l'utilisateur
  * et redirige sur la page confirmant l'achat.
+ * 
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
 @WebServlet(name = "AcheterPlacesCtrler", urlPatterns = {"/acheterPlaces"})

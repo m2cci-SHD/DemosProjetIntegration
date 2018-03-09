@@ -30,7 +30,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 /**
- * Fourni la liste des spectacles enregistrés dans la BD.
+ * Fourni la liste des spectacles enregistrés dans la BD et redirige sur la vue
+ * /WEB-INF/spectacles.jsp.
+ * 
+ * L'url associée à cette servlet est "/listespectacles".
+ * 
+ * C'est la page d'accueil du site (voir l'élément <welcome-file> dans le fichier
+ * de déploiement de l'application défini dans WEB-INF/web.xml.
+ * 
+ *     <welcome-file-list>
+ *       <welcome-file>listespectacles</welcome-file>
+ *    </welcome-file-list>
+ * 
+ * La servlet construit une liste de Spectacles placée en attribut de la requête
+ * transmise à la vue. Les nom de cette liste est "spectacles"
+ * 
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
 @WebServlet(name = "ListeSpectacleCtrler", urlPatterns = {"/listespectacles"})

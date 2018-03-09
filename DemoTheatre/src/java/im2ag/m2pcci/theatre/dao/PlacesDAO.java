@@ -30,6 +30,7 @@ import javax.json.stream.JsonGenerator;
 import javax.sql.DataSource;
 
 /**
+ * DAO proposant différentes méthodes concernant les places pour un spectacle
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
 public class PlacesDAO {
@@ -38,7 +39,7 @@ public class PlacesDAO {
      * Requête pour trouver les places déjà vendues pour un spectacle donné
      */
     private static final String PLACES_VENDUES
-            = "SELECT idplace, categorie, rang,  colonne FROM places_vendues NATURAL JOIN places WHERE idspectacle = ?";
+            = "SELECT idplace, categorie, rang, colonne FROM places_vendues NATURAL JOIN places WHERE idspectacle = ?";
 
     /**
      * Requête pour insérer les données dans la table PLACES_VENDUES
@@ -127,7 +128,8 @@ public class PlacesDAO {
                 conn.rollback();   // annule la transaction 
                 ex = ex.getNextException();  // on prend la cause
                 if (ex instanceof SQLIntegrityConstraintViolationException
-                        || ex.getMessage().contains("pk_placesvendues")) {  // certains drivers ne supportent pas encore le type SQLIntegrityConstraintViolationException
+                        || ex.getMessage().contains("pk_placesvendues")) {  
+                    // certains drivers ne supportent pas encore le type SQLIntegrityConstraintViolationException
                     throw new AchatConcurrentException("places déjà achetées ", ex);
                 } else {
                     throw ex;

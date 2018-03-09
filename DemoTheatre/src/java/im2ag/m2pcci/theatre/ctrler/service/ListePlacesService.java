@@ -31,7 +31,12 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 /**
- *
+ * Service permettant d'avoir sous forme d'un objet JSON la liste des
+ * places disponibles pour un spectacle donné.
+ * 
+ * Le spectacle concerné est le spectacle que l'utilisateur a choisi sur
+ * la page d'accueil et qui a été stocké en session.
+ * 
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
 @WebServlet(name = "ListePlacesCtrler", urlPatterns = {"/placesNonDisponibles"})

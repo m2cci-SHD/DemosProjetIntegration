@@ -3,8 +3,8 @@
     Page d'erreur affichée lorsque l'utilisateur n'a pu effectuer son achat 
     parceque certaines des places qu'il voulait acheter viennent d'être vendues 
     (la méthode acheterPlace de la DAO PlaceDAO a levé une exception de type 
-     AchatConcurrentEXception).
-    Author     : genoud
+     AchatConcurrentException).
+    Author     : Philippe Genoud - LIG Steamer - Université Grenoble Alpes
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
