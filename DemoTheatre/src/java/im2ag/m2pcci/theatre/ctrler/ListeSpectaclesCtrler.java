@@ -48,7 +48,7 @@ import javax.sql.DataSource;
  * @author Philippe GENOUD - Université Grenoble Alpes - Lab LIG-Steamer
  */
 @WebServlet(name = "ListeSpectacleCtrler", urlPatterns = {"/listespectacles"})
-public class ListeSpectacleCtrler extends HttpServlet {
+public class ListeSpectaclesCtrler extends HttpServlet {
 
     @Resource(name = "jdbc/test")
     private DataSource ds;
