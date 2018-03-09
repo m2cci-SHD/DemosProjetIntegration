@@ -68,11 +68,11 @@ public class AcheterPlacesCtrler extends HttpServlet {
             PlacesDAO.acheterPlaces(ds, spectacle.getId(), placesIds);
 
             // redirection vers la page confirmant l'achat.
-            request.getRequestDispatcher("/WEB-INF/achat.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/confirmationAchat.jsp").forward(request, response);
         } catch (SQLException ex) {
             throw new ServletException(ex.getMessage(), ex);
         } catch (AchatConcurrentException ex) {
-             request.getRequestDispatcher("/WEB-INF/erreurachat.jsp").forward(request, response);
+             request.getRequestDispatcher("/WEB-INF/echecAchat.jsp").forward(request, response);
         }
     }
 
