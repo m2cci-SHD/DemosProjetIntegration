@@ -38,6 +38,10 @@
                     <button id="achatBtn" disabled>Acheter</button>
                 </div>
             </div>
+            <hr>
+            <div>
+                <p>Abandon et <a href="/DemoTheatre">retour à l'accueil</a></p>
+            </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="js/jQuery-Seat-Charts/jquery.seat-charts.min.js" type="text/javascript"></script>

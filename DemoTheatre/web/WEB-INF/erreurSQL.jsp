@@ -32,5 +32,6 @@
                 stringWriter.close();
             %>
         </p>
+        <p><a href="/DemoTheatre">retour à l'accueil</a></p>
     </body>
 </html>

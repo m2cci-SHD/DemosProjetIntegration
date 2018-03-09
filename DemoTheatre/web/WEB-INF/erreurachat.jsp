@@ -16,6 +16,15 @@
     <body>
         <h1>Votre achat a échoué</h1>
         <p>Certaines des places que vous désiriez acheter viennent d'être vendues.</p>
-        <p><a href="spectacle?numerospectacle=${param.numerospectacle}">Recommencez votre achat</a></p>
+        <div>
+            <ul>
+                <li>
+                    <p><a href="spectacle?numerospectacle=${param.numerospectacle}">Recommencez votre achat</a></p>
+                </li>
+                <li>
+                    <p>Abandonner et <a href="/DemoTheatre">retourner à l'accueil</a></p>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
