@@ -61,7 +61,7 @@ public class SpectacleCtrler extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("spectacle", spect);
             // redirection vers la vue affichant le plan du theatre pour que l'utiisateur choisisse ses places
-            request.getRequestDispatcher("/WEB-INF/achatPlaces.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/choixPlaces.jsp").forward(request, response);
         } catch (SQLException ex) {
             throw new ServletException(ex.getMessage(),ex);
         }
